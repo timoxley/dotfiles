@@ -1,10 +1,14 @@
 function! ToggleColors()
   if &background == 'dark'
-    colorscheme bclear_jason
+    colorscheme bclear
   else
-    colorscheme jellybeans_jason
+    colorscheme jellybeans
   end
 endfunction
+
+IndentGuidesEnable
+colorscheme jellybeans
+
 map <Leader>C :call ToggleColors()<CR>
 
 set guioptions-=T " Hide the tool bar
@@ -15,32 +19,9 @@ if has("gui_macvim")
 
   " Disable scrollbars
   set guioptions-=rL
-
-  " Disable MacVim keybindings
-  macmenu &Edit.Find.Find\.\.\. key=<nop>
-  nmap <D-f> <Esc>
-  nmap <D-F> <Esc>
-  macmenu &File.New\ Tab key=<nop>
-  nmap <D-t> <Esc>
-  macmenu &File.Open\ Tab\.\.\. key=<nop>
-  nmap <D-T> <Esc>
-  macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
-
-  " Cmd+W to close current buffer and close the window if no buffers are left
-  macmenu &File.Close key=<nop>
-  nmap <D-w> :CommandW<CR>
-  imap <D-w> <Esc>:CommandW<CR>
-
-  " Disable Cmd+S to encourage `:w`
-  macmenu &File.Save key=<nop>
-  map <D-s> <Esc>
-  imap <D-s> <Esc><Esc>i
 endif
 
 " Cursor
 set guicursor=a:blinkon0 " turn off cursor blink
 set guicursor+=i:ver25-iCursor " colour cursor in insert mode
 set guicursor+=c:block-cCursor " colour cursor in command mode
-
-" Color columns
-hi ColorColumn guibg=#F0F0F0
