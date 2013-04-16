@@ -20,6 +20,7 @@
 --ignore-dir=vendor/bundle
 --ignore-dir=coverage
 --ignore-dir=tmp
+--ignore-dir=node_modules
 --ignore-dir=data
 --ignore-dir=Pods
 --smart-case
