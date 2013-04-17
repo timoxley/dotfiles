@@ -8,6 +8,7 @@ endfunction
 
 IndentGuidesEnable
 colorscheme paradox
+let g:mimic_paradox_alt=1<BAR>color paradox
 
 map <Leader>C :call ToggleColors()<CR>
 
