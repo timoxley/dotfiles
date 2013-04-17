@@ -2,12 +2,12 @@ function! ToggleColors()
   if &background == 'dark'
     colorscheme bclear
   else
-    colorscheme jellybeans
+    colorscheme paradox
   end
 endfunction
 
 IndentGuidesEnable
-colorscheme jellybeans
+colorscheme paradox
 
 map <Leader>C :call ToggleColors()<CR>
 
@@ -15,7 +15,7 @@ set guioptions-=T " Hide the tool bar
 
 " MacVim
 if has("gui_macvim")
-  set guifont=Monaco:h10
+  set guifont=Monaco:h11
 
   " Disable scrollbars
   set guioptions-=rL
