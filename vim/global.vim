@@ -47,7 +47,6 @@ set switchbuf=useopen                      " Don't re-open already opened buffer
 
 " Moving around / editing
 set nostartofline                          " Avoid moving cursor to BOL when jumping around
-set virtualedit=block                      " Let cursor move past the last char in block edit mode
 set scrolloff=3                            " Keep 3 context lines above and below the cursor
 set backspace=2                            " Allow backspacing over autoindent, EOL, and BOL
 set showmatch                              " Briefly jump to a paren once it's balanced
