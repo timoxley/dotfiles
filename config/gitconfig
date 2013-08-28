@@ -11,6 +11,9 @@ ui = auto
 [color "diff"]
 commit = yellow reverse
 
+[diff]
+algorithm = patience
+
 [core]
 excludesfile = ~/.gitignore
 
@@ -20,7 +23,10 @@ default = tracking
 [merge]
 log = true
 conflictstyle = diff3
-tool = vimdiff
+tool = kdiff3
+
+[branch]
+autosetuprebase = true
 
 [mergetool]
 prompt = false
