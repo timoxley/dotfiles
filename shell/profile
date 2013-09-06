@@ -2,6 +2,9 @@
 export LANG=en_AU.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
+# fix for cairo
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
+
 # general shell settings
 export PS1='\u@\h:\w\$ ' # basic prompt. get's overwritten later
 export FIGNORE="CVS:.DS_Store:.svn:__Alfresco.url"
@@ -231,6 +234,3 @@ if [[ -f ~/.bashrc.local ]]
 then
    source ~/.bashrc.local
 fi
-
-# fix for cairo
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
