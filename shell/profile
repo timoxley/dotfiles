@@ -231,3 +231,6 @@ if [[ -f ~/.bashrc.local ]]
 then
    source ~/.bashrc.local
 fi
+
+# fix for cairo
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
