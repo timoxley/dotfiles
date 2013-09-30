@@ -59,8 +59,3 @@ set smartcase                              " Switch to case sensitive mode if ne
 
 " Use % to jump to matching begin/end of blocks as well as brackets/parens
 runtime macros/matchit.vim
-
-" Default colourscheme
-if has("gui_running") || &t_Co == 88 || &t_Co == 256
-  colorscheme jellybeans_jason
-end
