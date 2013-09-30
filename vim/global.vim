@@ -15,7 +15,7 @@ set ttyfast                                " More smooth screen redrawing
 set noesckeys                              " Disable extended key support (cursor keys, function keys). Improves <Esc> time dramatically.
 set ruler                                  " Show ruler
 set number                                 " Show line numbers
-set mouse=                                 " Disable the mouse
+"set mouse=                                 " Disable the mouse
 set linespace=2                            " Spacing between lines
 set noswapfile                             " Disable creation of *.swp files
 set title                                  " Show title in terminal vim
