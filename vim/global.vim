@@ -1,5 +1,8 @@
 syntax on                                  " Turn on syntax highlighting
 filetype plugin indent on                  " Enable automatic filetype detection, filetype-specific plugins/indentation
+
+set noerrorbells visualbell t_vb=          " Disable annoying bells.
+
 set nocompatible                           " Don't need to keep compatibility with Vi
 set hidden                                 " Allow hiding buffers with unsaved changes
 set listchars=trail:.,tab:▸\ ,eol:¬        " Change the invisible characters
