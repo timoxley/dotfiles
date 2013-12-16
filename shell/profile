@@ -214,7 +214,9 @@ fi
 export PS1="$PS1"'\[\033[00m\]\$ '
 
 # use our own SSL root certificate if present
-if [[ -f "/usr/local/etc/openssl/certs/cert.pem" ]]; then
+if [[ -f "/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt" ]]; then
+  export SSL_CERT_FILE="/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt"
+else [[ -f "/usr/local/etc/openssl/certs/cert.pem" ]]; then
   export SSL_CERT_FILE="/usr/local/etc/openssl/certs/cert.pem"
 fi
 
