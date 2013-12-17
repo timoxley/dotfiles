@@ -45,11 +45,6 @@ noremap <Leader>i :set list!<CR>
 " Convert between spaces and tabs
 map <Leader>I :set list<CR>:FixWhitespace<CR>:ToggleTabs<CR>
 
-" Bookmarking
-map <C-Space> :ToggleBookmark<CR>
-map <C-Up>    :PreviousBookmark<CR>
-map <C-Down>  :NextBookmark<CR>
-
 " Jump to start and end of line using the home row keys
 map H ^
 map L $
