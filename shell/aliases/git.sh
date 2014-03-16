@@ -6,14 +6,14 @@ alias gcp='git checkout -p'
 alias gs='git status --untracked-files=all'
 alias gst='git stash --include-untracked --keep-index'
 alias gstp='git stash pop'
-alias gd='git diff'
+alias gd='git diff -M40'
 alias gdw='gd --word-diff=color --word-diff-regex="[A-z0-9_-]+"'
 alias gbdw='gbd --word-diff=color --word-diff-regex="[A-z0-9_-]+"'
 alias gds='gd --cached'
 alias gdsw='gdw --cached'
-alias gbd='gd $(git merge-base origin/HEAD HEAD)..'
-alias gbl='glg $(git merge-base origin/HEAD HEAD)..'
-alias gblp='glp $(git merge-base origin/HEAD HEAD)..'
+alias gbd='_git_assert_origin_head && gd $(git merge-base origin/HEAD HEAD)..'
+alias gbl='_git_assert_origin_head && git-log --reverse $(git merge-base origin/HEAD HEAD)..'
+alias gblp='_git_assert_origin_head && glp $(git merge-base origin/HEAD HEAD)..'
 alias gar='git reset HEAD'
 alias garp='git reset -p HEAD'
 alias ga='git add'
@@ -21,7 +21,6 @@ alias gap='git add -p'
 alias gld="git fsck --lost-found | grep '^dangling commit' | cut -d ' ' -f 3- | xargs git show -s --format='%ct %H' | sort -nr | cut -d ' ' -f 2 | xargs git show --stat"
 alias gc='git commit -v'
 alias gca='gc --amend'
-alias grt='git_current_tracking > /dev/null && git rebase -i @{upstream}'
 alias grc='git rebase --continue'
 alias gp='git push'
 alias gpt='git push -u origin $(git_current_branch)'
@@ -48,16 +47,31 @@ function git_current_tracking()
   fi
 }
 
-function git-log-graph() {
-  git log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %C(green bold)- %an %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short "$@"
+function _git_assert_origin_head() {
+  if ! git rev-parse origin/HEAD &> /dev/null; then
+    if git rev-parse origin/develop &> /dev/null; then
+      local TARGET=develop
+    else
+      local TARGET=master
+    fi
+
+    echo fatal: origin/HEAD is not set. >&2
+    echo >&2
+    echo Maybe run \`git remote set-head origin $TARGET\`? >&2
+    return 1
+  fi
+}
+
+function git-log() {
+  git log -M40 --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %C(green bold)- %an %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short "$@"
 }
 
 # git log
 function glg() {
   if [[ $# == 0 ]] && git rev-parse @{u} &> /dev/null; then
-    git-log-graph @{u} HEAD
+    git-log --graph @{u} HEAD
   else
-    git-log-graph "$@"
+    git-log --graph "$@"
   fi
 }
 
@@ -79,13 +93,13 @@ function glp()
     local default_range=''
   fi
 
-  git $pager log --patch $reverse "$@" $default_range
+  git $pager log --patch -M40 $reverse "$@" $default_range
 }
 
 # git log file
 function glf()
 {
-  git log --format=%H --follow -- "$@" | xargs --no-run-if-empty git show --stat
+  git log -M40 --format=%H --follow -- "$@" | xargs --no-run-if-empty git show --stat
 }
 
 # git log search
@@ -243,4 +257,20 @@ gcf() {
       return 1
       ;;
   esac
+}
+
+grt() {
+  if git rev-parse @{u} &> /dev/null; then
+    local TARGET="@{u}"
+  else
+    _git_assert_origin_head
+    local TARGET="origin/HEAD"
+  fi
+
+  git rebase -i $(git merge-base HEAD $TARGET)
+}
+
+grb() {
+  _git_assert_origin_head
+  git rebase -i $(git merge-base HEAD origin/HEAD)
 }
