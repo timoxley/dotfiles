@@ -59,3 +59,5 @@ set smartcase                              " Switch to case sensitive mode if ne
 
 " Use % to jump to matching begin/end of blocks as well as brackets/parens
 runtime macros/matchit.vim
+
+set runtimepath^=~/.vim/janus/vim/tools/vim-node
