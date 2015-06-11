@@ -10,5 +10,6 @@ autocmd Filetype css,scss,sass,js setlocal iskeyword+=-_
 " Makefile
 autocmd FileType make set noexpandtab
 
-" Enable spell check by default for git commits
-autocmd FileType gitcommit set spell
+" Enable spell check by default for git commits & markdown
+autocmd FileType gitcommit,markdown set spell
+
