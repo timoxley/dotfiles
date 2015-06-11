@@ -30,4 +30,3 @@ set guicursor+=c:block-cCursor " colour cursor in command mode
 
 " JSX highlighting in JS files
 let g:jsx_ext_required = 0
-let g:airline#extensions#tabline#enabled = 1
