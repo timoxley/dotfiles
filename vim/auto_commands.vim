@@ -3,13 +3,16 @@ autocmd FocusLost * nested :silent! wall
 
 " Markdown files
 autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown} setlocal ft=markdown wrap iskeyword+='
+autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown} setlocal cinkeys=
+
+" JS Files
+autocmd BufRead,BufNewFile {*.js,*.jsx} setlocal indentkeys-=*<Return>,<>>,<<>,/
 
 " Treat dasherised words as whole words
-autocmd Filetype css,scss,sass,js setlocal iskeyword+=-_
+autocmd Filetype css,scss,sass,js setlocal iskeyword+=-,_
 
 " Makefile
 autocmd FileType make set noexpandtab
 
 " Enable spell check by default for git commits & markdown
 autocmd FileType gitcommit,markdown set spell
-

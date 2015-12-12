@@ -26,7 +26,6 @@ fresh config/\* --file
 fresh-options --file=~/.vimrc --marker=\"
   fresh vim/leader.vim
   fresh twe4ked/dotfiles vim/vundle_before.vim
-  fresh vim/vundle.vim
   fresh vim/plugins/\*.vim
   fresh twe4ked/dotfiles vim/vundle_after.vim
   fresh vim/global.vim
@@ -36,6 +35,7 @@ fresh-options --file=~/.vimrc --marker=\"
   fresh vim/mappings/\*.vim
   fresh vim/auto_commands.vim
   fresh hackling/dotfiles vim/plugins/surround.vim
+  fresh vim/vundle.vim
 fresh-options
 fresh vim/gvimrc --file
 fresh vim/colors --file=~/.vim/colors/
