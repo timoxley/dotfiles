@@ -22,13 +22,13 @@ fresh-options --file=~/.vimrc.before --marker=\"
   fresh vim/plugins.vim
   fresh vim/vundle_after.vim
   fresh vim/janus.vim
+  fresh vim/leader.vim
 fresh-options
 
 fresh-options --file=~/.vimrc.after --marker=\"
   fresh vim/global.vim
   fresh vim/plugins/ctrlp.vim
   fresh vim/config/undo.vim
-  fresh vim/leader.vim
   fresh vim/mappings/indent.vim
   fresh vim/config/bubbling.vim
   fresh vim/mappings.vim
