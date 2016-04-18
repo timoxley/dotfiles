@@ -1,18 +1,3 @@
-function! ToggleColors()
-  if &background == 'dark'
-    colorscheme bclear
-  else
-    colorscheme paradox
-  end
-endfunction
-
-IndentGuidesEnable
-colorscheme paradox
-let g:mimic_paradox_alt=1
-color paradox
-
-map <Leader>C :call ToggleColors()<CR>
-
 set guioptions-=T " Hide the tool bar
 
 " MacVim

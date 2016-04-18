@@ -6,16 +6,17 @@
 path = .gitconfig.local
 
 [color]
-ui = auto
-
-[color "diff"]
-commit = yellow reverse
+ui = always
 
 [diff]
 algorithm = patience
 
 [core]
 excludesfile = ~/.gitignore
+
+[pager]
+diff = diff-so-fancy | less --tabs=4 -RFX
+show = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
 default = tracking
@@ -72,3 +73,6 @@ versiontag =
 
 [git-up "rebase"]
 arguments = --preserve-merges
+
+[interactive]
+diffFilter = "diff-so-fancy"

@@ -1,3 +1,73 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="blinks"
+
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable bi-weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+#plugins=()
+
+source $ZSH/oh-my-zsh.sh
+
+# Kill any annoying right prompt content
+RPROMPT=''
+
+# customisation to blinks for iterm2 marks integration
+export PROMPT="$(echo $PROMPT | tr '\n' '|' | sed 's/%f%k%b%}|/%f%k%b%}/' | tr '|' '\n')"
+
+export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:/usr/local/sbin
+# Customize to your needs...
+#::/usr/bin:/bin:/usr/sbin:/sbin
+#export PATH=$PATH:/usr/local/share/npm/bin
+#export PATH=$PATH:/opt/local/bin
+#export PATH=$PATH:/opt/local/sbin
+
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
+export PATH=$PATH:/usr/local/Cellar/ruby/2.0.0-p247/bin/
+export NODE_ENV='development'
+
+hitch() {
+  command hitch "$@"
+  if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
+}
+
+export VIMRUNTIME='/usr/local/Cellar/macvim/7.4-74/MacVim.app/Contents/Resources/vim/runtime'
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+source /Users/timoxley/.iterm2_shell_integration.zsh
+
+# added by travis gem
+[ -f /Users/timoxley/.travis/travis.sh ] && source /Users/timoxley/.travis/travis.sh
+
 # locale stuff
 export LANG=en_AU.UTF-8
 export LC_CTYPE=en_US.UTF-8
@@ -5,117 +75,7 @@ export LC_CTYPE=en_US.UTF-8
 # general shell settings
 export FIGNORE="CVS:.DS_Store:.svn:__Alfresco.url"
 export MAKEFLAGS='-j 3'
-complete -d cd mkdir rmdir
 
-# open man pages in Preview.app
-if [ -d "/Applications/Preview.app" ]
-then
-  pman () {
-    man -t "$@" |
-    ( which ps2pdf &> /dev/null && ps2pdf - - || cat) |
-    open -f -a /Applications/Preview.app
-  }
-fi
-
-# add a poor facsimile for Linux's `free` if we're on Mac OS
-if ! type free > /dev/null 2>&1 && [[ "$(uname -s)" == 'Darwin' ]]
-then
-  alias free="top -s 0 -l 1 -pid 0 -stats pid | grep '^PhysMem: ' | cut -d : -f 2- | tr ',' '\n'"
-fi
-
-# I love colour
-if ls --version 2> /dev/null | grep -q 'GNU coreutils'
-then
-  export GREP_OPTIONS='--color=auto'
-  alias ls="ls --color=auto --classify --block-size=\'1"
-fi
-alias dir='echo Use /bin/ls :\) >&2; false' # I used this to ween myself away from the 'dir' alias
-alias mate='echo Use mvim :\) >&2; false'
-alias nano='echo Use vim :\) >&2; false'
-
-# handy aliases
-alias timestamp='gawk "{now=strftime(\"%F %T \"); print now \$0; fflush(); }"'
-
-# awesome history tracking
-export HISTSIZE=100000
-export HISTFILESIZE=100000
-export HISTCONTROL=ignoredups
-export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S  "
-export PROMPT_COMMAND='history -a'
-shopt -s histappend
-PROMPT_COMMAND='history -a; echo "$$ $USER $(history 1)" >> ~/.bash_eternal_history'
-
-# notify of bg job completion immediately
-set -o notify
-
-# use Vi mode instead of Emacs mode
-set -o vi
-
-# no mail notifications
-shopt -u mailwarn
-unset MAILCHECK
-
-# check for window resizing whenever the prompt is displayed
-shopt -s checkwinsize
-# display "user@hostname: dir" in the window title
-if [[ "$TERM" =~ ^xterm ]]
-then
-  export PROMPT_COMMAND="$PROMPT_COMMAND; "'echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
-fi
-
-# enable rvm if available
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-  source "$HOME/.rvm/scripts/rvm"
-elif [[ -s "/usr/local/rvm/scripts/rvm" ]]; then
-  source "/usr/local/rvm/scripts/rvm"
-fi
-[[ -n "$rvm_path" ]] && [[ -r "$rvm_path/scripts/completion" ]] && source "$rvm_path/scripts/completion"
-export rvm_pretty_print_flag=1
-
-# set JAVA_HOME if on Mac OS
-if [ -z "$JAVA_HOME" -a -d /System/Library/Frameworks/JavaVM.framework/Home ]
-then
-  export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
-fi
-
-# lesspipe lets us do cool things like view gzipped files
-if which lesspipe &> /dev/null
-then
-  eval "$(lesspipe)"
-elif which lesspipe.sh &> /dev/null
-then
-  eval "$(lesspipe.sh)"
-fi
-
-# alias Debian's `ack-grep` to `ack`
-if type -t ack-grep > /dev/null
-then
-  alias ack=ack-grep
-fi
-
-# load Homebrew's shell completion
-if which brew &> /dev/null && [ -f "$(brew --prefix)/Library/Contributions/brew_bash_completion.sh" ]
-then
-  source "$(brew --prefix)/Library/Contributions/brew_bash_completion.sh"
-fi
-
-# use our own SSL root certificate if present
-if [[ -f "/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt" ]]; then
-  export SSL_CERT_FILE="/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt"
-else [[ -f "/usr/local/etc/openssl/certs/cert.pem" ]]; then
-  export SSL_CERT_FILE="/usr/local/etc/openssl/certs/cert.pem"
-fi
-
-# initialise autojump
-if which brew &> /dev/null; then
-  AUTOJUMP_SCRIPT="$(brew --prefix)/etc/autojump"
-  if [ -e "$AUTOJUMP_SCRIPT" ]; then
-    source "$AUTOJUMP_SCRIPT"
-  fi
-fi
-
-# load local shell configuration if present
-if [[ -f ~/.bashrc.local ]]
-then
-   source ~/.bashrc.local
-fi
+# make zsh keybindings like bash
+bindkey '^U' backward-kill-line
+bindkey '^Y' yank

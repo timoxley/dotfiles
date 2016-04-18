@@ -9,10 +9,13 @@ autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown} setlocal cinkeys=
 autocmd BufRead,BufNewFile {*.js,*.jsx} setlocal indentkeys-=*<Return>,<>>,<<>,/
 
 " Treat dasherised words as whole words
-autocmd Filetype css,scss,sass,js setlocal iskeyword+=-,_
+autocmd Filetype css,js setlocal iskeyword+=-,_
 
 " Makefile
 autocmd FileType make set noexpandtab
 
 " Enable spell check by default for git commits & markdown
 autocmd FileType gitcommit,markdown set spell
+
+" disable nerdtree refresh on focus
+autocmd! AuNERDTreeCmd FocusGained *

@@ -1,50 +1,42 @@
 # vim: set ft=sh:
 
-fresh freshshell/fresh bin/fresh --bin
+# freshshell.com
+#
+# Examples:
+#
+#   fresh twe4ked/dotfiles shell/functions.sh
 
-fresh freshshell/fresh contrib/source-build.sh --file=~/.bash_profile
-fresh freshshell/fresh contrib/source-build.sh --file=~/.bashrc
+# fresh timoxley/dotfiles shell/aliases/\/*
 
-fresh shell/aliases/\*
-fresh shell/functions/\*
-fresh shell/config/path.sh
-fresh shell/config/pager.sh
-fresh shell/config/hitch.sh
-fresh shell/config/rbenv.sh
-fresh shell/config/heroku.sh
-fresh shell/config/filters.sh
-fresh shell/config/ctrlc.sh
-fresh shell/config/git.sh
-fresh shell/config/prompt.sh
-fresh shell/\*
+#
+# See http://freshshell.com/readme for documentation.
 
-fresh freshshell/fresh contrib/completion/fresh-completion.bash
-fresh bobthecow/git-flow-completion git-flow-completion.bash
+fresh shell/profile
+fresh rupa/z z.sh
+fresh shell/aliases/git.sh
 
 fresh config/\* --file
 
-fresh-options --file=~/.vimrc --marker=\"
-  fresh vim/leader.vim
-  fresh twe4ked/dotfiles vim/vundle_before.vim
-  fresh vim/plugins/\*.vim
-  fresh twe4ked/dotfiles vim/vundle_after.vim
-  fresh vim/global.vim
-  fresh vim/config/\*.vim
-  fresh vim/functions.vim
-  fresh vim/mappings.vim
-  fresh vim/mappings/\*.vim
-  fresh vim/auto_commands.vim
-  fresh hackling/dotfiles vim/plugins/surround.vim
-  fresh vim/vundle.vim
+fresh-options --file=~/.vimrc.before --marker=\"
+  fresh vim/vundle_before.vim
+  fresh vim/plugins.vim
+  fresh vim/vundle_after.vim
+  fresh vim/janus.vim
 fresh-options
-fresh vim/gvimrc --file
-fresh vim/colors --file=~/.vim/colors/
 
-fresh bin/\* --bin
-fresh bin/wemux/\* --bin
+fresh-options --file=~/.vimrc.after --marker=\"
+  fresh vim/global.vim
+  fresh vim/plugins/ctrlp.vim
+  fresh vim/config/undo.vim
+  fresh vim/leader.vim
+  fresh vim/mappings/indent.vim
+  fresh vim/config/bubbling.vim
+  fresh vim/mappings.vim
+  fresh vim/auto_commands.vim
+  fresh vim/colors.vim
+fresh-options
 
-fresh twe4ked/dotfiles bin/heroku-remote-add --bin
-fresh pengwynn/dotfiles bin/git-pr --bin
-fresh bartman/git-wip git-wip --bin
-fresh pengwynn/dotfiles bin/gxpr --bin
-fresh twe4ked/catacomb bin/catacomb --bin
+fresh vim/gvimrc --file=~/.gvimrc.after
+
+fresh freshshell/fresh bin/fresh --bin
+

@@ -56,6 +56,7 @@ set matchtime=2                            " (for only .2 seconds).
 " Searching
 set ignorecase                             " Ignore case by default when searching
 set smartcase                              " Switch to case sensitive mode if needle contains uppercase characters
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " ignore files
 
 " Use % to jump to matching begin/end of blocks as well as brackets/parens
 runtime macros/matchit.vim
