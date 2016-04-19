@@ -1,0 +1,2 @@
+# read built fresh shell config
+source ~/.fresh/build/shell.sh

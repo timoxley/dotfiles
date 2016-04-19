@@ -11,6 +11,9 @@
 #
 # See http://freshshell.com/readme for documentation.
 
+# bootstrap
+fresh shell/bootstrap --file=~/.zshrc
+
 fresh shell/profile
 fresh rupa/z z.sh
 fresh shell/aliases/git.sh
@@ -39,4 +42,3 @@ fresh-options
 fresh vim/gvimrc --file=~/.gvimrc.after
 
 fresh freshshell/fresh bin/fresh --bin
-
