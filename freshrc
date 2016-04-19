@@ -13,6 +13,10 @@
 
 # bootstrap
 fresh shell/bootstrap --file=~/.zshrc
+fresh shell/bootstrap --file=~/.bashrc
+
+# zsh only config
+fresh shell/zshrc --file=~/.zshrc
 
 fresh shell/profile
 fresh rupa/z z.sh
