@@ -3,76 +3,74 @@
 #   git config -f ~/.gitconfig.local user.email me@example.com
 
 [include]
-path = .gitconfig.local
+  path = .gitconfig.local
 
 [color]
-ui = always
+  ui = always
 
 [diff]
-algorithm = patience
+  algorithm = patience
 
 [core]
-excludesfile = ~/.gitignore
-
-[pager]
-diff = diff-so-fancy | less --tabs=4 -RFX
-show = diff-so-fancy | less --tabs=4 -RFX
+  excludesfile = ~/.gitignore
 
 [push]
-default = tracking
+  default = tracking
 
 [merge]
-log = true
-conflictstyle = diff3
-tool = opendiff
+  log = true
+  conflictstyle = diff3
+  tool = opendiff
 
 [branch]
-autosetuprebase = always
+  autosetuprebase = always
 
 [mergetool]
-prompt = false
+  prompt = false
 
 [rebase]
-autosquash = true
-
-[url "git@github.com:"]
-insteadOf = "gh:"
-pushInsteadOf = "github:"
-pushInsteadOf = "git://github.com/"
-
-[url "git://github.com/"]
-insteadOf = "github:"
-
-[url "git@gist.github.com:"]
-insteadOf = "gst:"
-pushInsteadOf = "gist:"
-pushInsteadOf = "git://gist.github.com/"
-
-[url "git://gist.github.com/"]
-insteadOf = "gist:"
-
-[url "git@heroku.com:"]
-insteadOf = "heroku:"
-
-[git-up "bundler"]
-check = true
+  autosquash = true
 
 [rerere]
-enabled = 1
+  enabled = 1
 
-[gitflow "branch"]
-master = master
-develop = develop
-
-[gitflow "prefix"]
-feature = feature/
-release = release/
-hotfix = hotfix/
-support = support/
-versiontag =
-
-[git-up "rebase"]
-arguments = --preserve-merges
+# fancy diffing
 
 [interactive]
-diffFilter = "diff-so-fancy"
+  diffFilter = "diff-so-fancy"
+
+[pager]
+  diff = diff-so-fancy | less --tabs=4 -RFX
+  show = diff-so-fancy | less --tabs=4 -RFX
+
+# ensure integrity of files
+
+[transfer]
+  fsckobjects = true
+
+[fetch]
+  fsckobjects = true
+
+[receive]
+  fsckObjects = true
+
+# remote url aliases
+
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+  insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+
+[url "git@heroku.com:"]
+  insteadOf = "heroku:"
