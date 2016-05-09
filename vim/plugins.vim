@@ -8,9 +8,6 @@ Plugin 'alunny/pegjs-vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'mxw/vim-jsx'
 Plugin 'bling/vim-airline'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'inside/vim-search-pulse'
-Plugin 'nathanaelkane/vim-indent-guides'
 
 " vim-pegjs
 
@@ -47,4 +44,3 @@ let g:airline#extensions#tabline#excludes = []
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#branch#enabled = 1
-

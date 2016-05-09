@@ -5,9 +5,9 @@ set noerrorbells visualbell t_vb=          " Disable annoying bells.
 
 set nocompatible                           " Don't need to keep compatibility with Vi
 set hidden                                 " Allow hiding buffers with unsaved changes
-set listchars=trail:.,tab:▸\ ,eol:¬        " Change the invisible characters
+set listchars=trail:·,precedes:«,extends:»,tab:▸\  " Change the invisible characters, no eol
 set fillchars+=vert:\                      " Hide pipes on vertical splits
-set nolist                                 " Hide invisibles by default
+set list                                   " Show invisibles by default
 set showcmd                                " Show incomplete cmds down the bottom
 set showmode                               " Show current mode down the bottom
 set history=1000                           " Remember more history for commands and search patterns

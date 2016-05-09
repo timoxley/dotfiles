@@ -28,4 +28,3 @@ export LC_CTYPE=en_US.UTF-8
 
 # general shell settings
 export FIGNORE="CVS:.DS_Store:.svn:__Alfresco.url"
-export MAKEFLAGS='-j 3'
