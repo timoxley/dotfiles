@@ -11,6 +11,7 @@ let g:mimic_paradox_alt=1
 let g:mimic_font_style=3
 color paradox
 
+
 map <Leader>C :call ToggleColors()<CR>
 
 " increase contrast between cursor and search result
@@ -23,3 +24,10 @@ hi link SyntasticWarning SpellBad
 
 " greenscale
 let g:vim_search_pulse_color_list=['#026866', '#30897a', '#5cad8e']
+
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+

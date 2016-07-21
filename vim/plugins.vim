@@ -1,4 +1,5 @@
-Plugin 'othree/yajs.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'othree/html5.vim'
 Plugin 'cespare/vim-toml'
@@ -8,6 +9,7 @@ Plugin 'alunny/pegjs-vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'mxw/vim-jsx'
 Plugin 'bling/vim-airline'
+Plugin 'dracula/vim'
 
 " vim-pegjs
 
