@@ -10,12 +10,14 @@
 
 [diff]
   algorithm = patience
+  compactionHeuristic = true
 
 [core]
   excludesfile = ~/.gitignore
 
 [push]
   default = tracking
+  followTags = true
 
 [merge]
   log = true
