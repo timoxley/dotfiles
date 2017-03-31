@@ -15,7 +15,6 @@ hitch() {
   if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
 }
 
-export VIMRUNTIME='/usr/local/Cellar/macvim/7.4-74/MacVim.app/Contents/Resources/vim/runtime'
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
