@@ -39,7 +39,7 @@
 # fancy diffing
 
 [interactive]
-  diffFilter = "diff-so-fancy"
+  diffFilter = diff-so-fancy --patch | less --tabs=4 -RFX
 
 [pager]
   diff = diff-so-fancy | less --tabs=4 -RFX
