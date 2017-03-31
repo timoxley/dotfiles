@@ -1,3 +1,5 @@
+Plugin 'w0rp/ale'
+Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'hail2u/vim-css3-syntax'
@@ -10,6 +12,22 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'mxw/vim-jsx'
 Plugin 'bling/vim-airline'
 Plugin 'dracula/vim'
+Plugin 'justinmk/vim-sneak'
+Plugin 'thinca/vim-visualstar'
+Plugin 'tpope/vim-speeddating'
+Plugin 'terryma/vim-smooth-scroll'
+Plugin 'reedes/vim-pencil'
+Plugin 'jbnicolai/vim-AnsiEsc'
+
+" vim-javascript
+
+let g:javascript_plugin_flow = 1 " flowtype syntax
+let g:javascript_plugin_jsdoc = 1 " jsdoc syntax
+
+
+" Format .pcss as .css
+
+autocmd BufNewFile,BufRead *.pcss set ft=css
 
 " vim-pegjs
 
@@ -46,3 +64,11 @@ let g:airline#extensions#tabline#excludes = []
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#branch#enabled = 1
+
+let g:ale_linters = {
+\   'javascript': ['eslint', 'flow'],
+\}
+
+autocmd FileType javascript let g:ale_linters = {
+\  'javascript': findfile('.eslintrc', '.;') != '' ? [ 'eslint', 'flow' ] : [ 'standard', 'flow' ],
+\}

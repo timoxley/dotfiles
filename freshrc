@@ -21,6 +21,8 @@ fresh shell/zshrc --file=~/.zshrc
 fresh shell/profile
 fresh rupa/z z.sh
 fresh shell/aliases/git.sh
+fresh shell/aliases/editor.sh
+fresh shell/editor.sh
 
 fresh config/\* --file
 
@@ -44,7 +46,7 @@ fresh-options --file=~/.vimrc.after --marker=\"
   fresh vim/mappings.vim
   fresh vim/auto_commands.vim
   fresh vim/colors.vim
-  fresh vim/plugins/syntastic.vim
+  #fresh vim/plugins/syntastic.vim
 fresh-options
 
 fresh vim/gvimrc --file=~/.gvimrc.after
