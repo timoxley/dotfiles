@@ -5,18 +5,12 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'othree/html5.vim'
 Plugin 'cespare/vim-toml'
-Plugin '29decibel/vim-stringify'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'alunny/pegjs-vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'mxw/vim-jsx'
 Plugin 'bling/vim-airline'
-Plugin 'dracula/vim'
-Plugin 'justinmk/vim-sneak'
-Plugin 'thinca/vim-visualstar'
-Plugin 'tpope/vim-speeddating'
 Plugin 'terryma/vim-smooth-scroll'
-Plugin 'reedes/vim-pencil'
 Plugin 'jbnicolai/vim-AnsiEsc'
 
 " vim-javascript
@@ -72,3 +66,8 @@ let g:ale_linters = {
 autocmd FileType javascript let g:ale_linters = {
 \  'javascript': findfile('.eslintrc', '.;') != '' ? [ 'eslint', 'flow' ] : [ 'standard', 'flow' ],
 \}
+
+let g:ale_sign_column_always = 1
+
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
