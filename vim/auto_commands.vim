@@ -9,7 +9,7 @@ autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown} setlocal cinkeys=
 autocmd BufRead,BufNewFile {*.js,*.jsx} setlocal indentkeys-=*<Return>,<>>,<<>,/
 
 " Treat dasherised words as whole words
-autocmd Filetype css,js setlocal iskeyword+=-,_
+autocmd Filetype css,js,jsx setlocal iskeyword+=-,_
 
 " Makefile
 autocmd FileType make setlocal noexpandtab
@@ -19,3 +19,6 @@ autocmd FileType gitcommit,markdown setlocal spell
 
 " disable nerdtree refresh on focus
 autocmd! AuNERDTreeCmd FocusGained *
+
+" Enable rainbow parens
+au VimEnter * RainbowParenthesesToggleAll

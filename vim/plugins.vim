@@ -12,6 +12,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'jbnicolai/vim-AnsiEsc'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " vim-javascript
 
