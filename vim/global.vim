@@ -1,5 +1,6 @@
 syntax on                                  " Turn on syntax highlighting
 filetype plugin indent on                  " Enable automatic filetype detection, filetype-specific plugins/indentation
+set encoding=utf8                          " Set encoding to UTF-8 to show glyphs
 
 set noerrorbells visualbell t_vb=          " Disable annoying bells.
 

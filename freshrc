@@ -31,9 +31,10 @@ fresh-options --file=~/.vimrc.before --marker=\"
   fresh vim/vundle_before.vim
   fresh vim/plugins.vim
   fresh vim/plugins/ctrlp.vim
-  fresh vim/plugins/quickfixsigns.vim
   fresh vim/plugins/incsearch-pulse.vim
   fresh vim/plugins/indent-guides.vim
+  fresh vim/plugins/airline.vim
+  fresh vim/plugins/startify.vim
   fresh vim/vundle_after.vim
   fresh vim/janus.vim
 fresh-options
@@ -46,8 +47,10 @@ fresh-options --file=~/.vimrc.after --marker=\"
   fresh vim/mappings.vim
   fresh vim/auto_commands.vim
   fresh vim/colors.vim
-  #fresh vim/plugins/syntastic.vim
+  fresh vim/plugins_after.vim
 fresh-options
+
+fresh vim/snippets --file=~/.vim/after/snippets/
 
 fresh vim/gvimrc --file=~/.gvimrc.after
 

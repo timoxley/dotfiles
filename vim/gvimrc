@@ -3,7 +3,7 @@ set guioptions-=T " Hide the tool bar
 " MacVim
 if has("gui_macvim")
   set guifont=Monaco:h11
-
+  set guifont=Monaco\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11 " for ryanoasis/vim-devicons
   " Disable scrollbars
   set guioptions-=rL
 endif
@@ -15,3 +15,5 @@ set guicursor+=c:block-cCursor " colour cursor in command mode
 
 let g:NERDTreeHijackNetrw=1
 let NERDTreeHijackNetrw=1
+
+let g:gitgutter_override_sign_column_highlight = 0

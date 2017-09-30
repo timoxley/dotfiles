@@ -6,7 +6,7 @@
   path = .gitconfig.local
 
 [color]
-  ui = always
+  ui = true
 
 [diff]
   algorithm = patience
@@ -39,11 +39,11 @@
 # fancy diffing
 
 [interactive]
-  diffFilter = diff-so-fancy --patch | less --tabs=4 -RFX
+  diffFilter = diff-so-fancy | less --tabs=4 -RFX
 
 [pager]
-  diff = diff-so-fancy | less --tabs=4 -RFX
-  show = diff-so-fancy | less --tabs=4 -RFX
+  ; diff = diff-so-fancy | less --tabs=4 -RFX
+  ; show = diff-so-fancy | less --tabs=4 -RFX
 
 # ensure integrity of files
 

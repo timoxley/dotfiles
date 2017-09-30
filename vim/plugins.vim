@@ -13,6 +13,9 @@ Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'jbnicolai/vim-AnsiEsc'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jvirtanen/vim-octave'
+Plugin 'mhinz/vim-startify'
+Plugin 'airblade/vim-gitgutter'
 
 " vim-javascript
 
@@ -35,30 +38,9 @@ autocmd BufNewFile,BufRead *.vp,*.fp,*.gp,*.vs,*.fs,*.gs,*.tcs,*.tes,*.cs,*.vert
 
 " vim-jsx
 
-" JSX highlighting in JS files
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 0 " JSX highlighting in JS files
 
-" vim-airline
-
-set lazyredraw
-set laststatus=1 " Always show the statusline
-
-if !exists('g:airline_symbols')
-let g:airline_symbols = {}
-
-endif
-
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#tagbar#flags = 's'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='dark'
-let g:airline_section_c = '%F'
-
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#excludes = []
-let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
-let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#branch#enabled = 1
+" ale
 
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow'],
@@ -70,5 +52,17 @@ autocmd FileType javascript let g:ale_linters = {
 
 let g:ale_sign_column_always = 1
 
+" NERD
+
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+" vim-devicons
+
+let g:airline_powerline_fonts = 1
+
+" vim-gitgutter
+
+set updatetime=250
+let g:gitgutter_diff_args = '--no-color'
+let g:gitgutter_override_sign_column_highlight = 0
