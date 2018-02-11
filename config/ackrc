@@ -22,6 +22,8 @@
 --ignore-dir=tmp
 --ignore-dir=node_modules
 --ignore-dir=data
+--ignore-dir=build
+--ignore-dir=.esm-cache
 --ignore-dir=Pods
 --smart-case
 --pager=less -R -S

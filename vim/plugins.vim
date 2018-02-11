@@ -50,10 +50,12 @@ autocmd FileType javascript let g:ale_linters = {
 \  'javascript': findfile('.eslintrc', '.;') != '' ? [ 'eslint', 'flow' ] : [ 'standard', 'flow' ],
 \}
 
+call ale#Set('javascript_standard_options', '--parser=babel-eslint')
 let g:ale_sign_column_always = 1
 
 " NERD
 
+set lazyredraw " improve NERDTree render speed
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 
@@ -63,6 +65,10 @@ let g:airline_powerline_fonts = 1
 
 " vim-gitgutter
 
-set updatetime=250
+set updatetime=2000
 let g:gitgutter_diff_args = '--no-color'
 let g:gitgutter_override_sign_column_highlight = 0
+
+" Disable syntax highlighting after 256 columns
+set synmaxcol=256
+syntax sync minlines=256

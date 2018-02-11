@@ -278,3 +278,10 @@ grb() {
   _git_assert_origin_head
   git rebase -i $(git merge-base HEAD origin/HEAD)
 }
+
+stashgrep() {
+  IFS=$'\n'
+  for i in `git stash list --format="%gd"`; do
+    git stash show -p $i | grep -H --label="$i" "$1";
+  done
+}

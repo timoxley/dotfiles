@@ -7,16 +7,12 @@ export PATH=$PATH:/usr/local/sbin
 #export PATH=$PATH:/opt/local/sbin
 
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
-export PATH=$PATH:/usr/local/Cellar/ruby/2.0.0-p247/bin/
 export NODE_ENV='development'
 
 hitch() {
   command hitch "$@"
   if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
 }
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 # added by travis gem
 [ -f /Users/timoxley/.travis/travis.sh ] && source /Users/timoxley/.travis/travis.sh
