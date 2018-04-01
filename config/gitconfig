@@ -11,6 +11,7 @@
 [diff]
   algorithm = patience
   compactionHeuristic = true
+  mnemonicprefix = true
 
 [core]
   excludesfile = ~/.gitignore
@@ -44,6 +45,9 @@
 [pager]
   ; diff = diff-so-fancy | less --tabs=4 -RFX
   ; show = diff-so-fancy | less --tabs=4 -RFX
+
+[column.ui]
+  status = always
 
 # ensure integrity of files
 
