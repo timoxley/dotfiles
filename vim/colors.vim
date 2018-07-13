@@ -24,10 +24,3 @@ hi link SyntasticWarning SpellBad
 
 " greenscale
 let g:vim_search_pulse_color_list=['#026866', '#30897a', '#5cad8e']
-
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-

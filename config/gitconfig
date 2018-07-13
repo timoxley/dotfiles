@@ -40,7 +40,7 @@
 # fancy diffing
 
 [interactive]
-  diffFilter = diff-so-fancy | less --tabs=4 -RFX
+  ;diffFilter = diff-so-fancy | less --tabs=4
 
 [pager]
   ; diff = diff-so-fancy | less --tabs=4 -RFX

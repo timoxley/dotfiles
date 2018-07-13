@@ -1,9 +1,11 @@
 set guioptions-=T " Hide the tool bar
 
+"set macligatures
+
 " MacVim
 if has("gui_macvim")
   set guifont=Monaco:h11
-  set guifont=Monaco\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11 " for ryanoasis/vim-devicons
+  set guifont=Monaco\ Nerd\ Font\ Mono:h11 " for ryanoasis/vim-devicons
   " Disable scrollbars
   set guioptions-=rL
 endif

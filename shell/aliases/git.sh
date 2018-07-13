@@ -287,3 +287,11 @@ stashgrep() {
     git stash show -p $i | grep -H --label="$i" "$1";
   done
 }
+
+gfix () {
+  git stash -u -k
+  git commit --fixup=$1
+  git rebase --interactive --autosquash $1^
+  git stash pop
+}
+

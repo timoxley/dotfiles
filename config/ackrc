@@ -4,6 +4,7 @@
 --follow
 --nogroup
 --type-add=ruby=.haml,.hamlc,.feature,.ru
+--type-add=js=.js,.jsx,.mjs
 --type-add=css=.sass,.scss
 --type-set=markdown=.markdown,.mdown,.md
 --type-add=objc=.pch

@@ -20,5 +20,5 @@ autocmd FileType gitcommit,markdown setlocal spell
 " disable nerdtree refresh on focus
 autocmd! AuNERDTreeCmd FocusGained *
 
-" Enable rainbow parens
-au VimEnter * RainbowParenthesesToggleAll
+au BufRead,BufNewFile,BufEnter ~/Projects/streamr/* setlocal ts=4 sts=4 sw=4
+au BufRead,BufNewFile,BufEnter ~/Projects/streamr/experiments/canvas/* setlocal ts=2 sts=2 sw=2
