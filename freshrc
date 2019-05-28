@@ -30,6 +30,7 @@ fresh-options --file=~/.vimrc.before --marker=\"
   fresh vim/leader.vim
   fresh vim/vundle_before.vim
   fresh vim/plugins.vim
+  fresh vim/config/bubbling.vim
   fresh vim/plugins/ctrlp.vim
   fresh vim/plugins/incsearch-pulse.vim
   fresh vim/plugins/indent-guides.vim
@@ -43,7 +44,6 @@ fresh-options --file=~/.vimrc.after --marker=\"
   fresh vim/global.vim
   fresh vim/config/undo.vim
   fresh vim/mappings/indent.vim
-  fresh vim/config/bubbling.vim
   fresh vim/mappings.vim
   fresh vim/auto_commands.vim
   fresh vim/colors.vim
@@ -53,5 +53,9 @@ fresh-options
 fresh vim/snippets --file=~/.vim/after/snippets/
 
 fresh vim/gvimrc --file=~/.gvimrc.after
+
+fresh-options --bin
+  fresh bin/loop
+fresh-options
 
 fresh freshshell/fresh bin/fresh --bin
