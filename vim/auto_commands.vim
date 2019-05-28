@@ -5,6 +5,7 @@ autocmd FocusLost * nested :silent! wall
 autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown} setlocal ft=markdown wrap iskeyword+='
 autocmd BufRead,BufNewFile {*.md,*.mkd,*.markdown} setlocal cinkeys=
 
+
 " JS Files
 autocmd BufRead,BufNewFile {*.js,*.jsx} setlocal indentkeys-=*<Return>,<>>,<<>,/
 
