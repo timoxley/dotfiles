@@ -299,3 +299,7 @@ gfix () {
   git stash pop
 }
 
+# show last 20 branches
+gbr () {
+  git for-each-ref --sort=-committerdate --count=20 refs/heads/ --format='%(HEAD)%(align:right,2)%(upstream:trackshort)%(end) %(color:red)%(objectname:short)%(color:reset) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' "$@"
+}
