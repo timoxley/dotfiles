@@ -1,5 +1,5 @@
-Bundle 'matze/vim-move'
-Bundle 'AndrewRadev/sideways.vim'
+Plugin 'matze/vim-move'
+Plugin 'AndrewRadev/sideways.vim'
 
 let g:move_map_keys = 0
 
@@ -12,3 +12,7 @@ vmap <silent> ∆ <Plug>MoveBlockDown
 " Use option-H/L to bubble items (function arguments, etc) left and right
 nmap ˙ :SidewaysLeft<CR>
 nmap ¬ :SidewaysRight<CR>
+
+
+nmap <C-Left> :SidewaysLeft<CR>
+nmap <C-Right> :SidewaysRight<CR>

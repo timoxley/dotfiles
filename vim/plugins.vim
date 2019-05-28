@@ -19,9 +19,10 @@ Plugin 'jvirtanen/vim-octave'
 Plugin 'mhinz/vim-startify'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'alexlafroscia/postcss-syntax.vim'
+Plugin 'mg979/vim-visual-multi'
 
 "Plugin 'ryanoasis/vim-devicons'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " vim-javascript
 
@@ -85,3 +86,8 @@ let g:gitgutter_override_sign_column_highlight = 0
 " Disable syntax highlighting after 256 columns
 set synmaxcol=256
 syntax sync minlines=256
+
+" mg979/vim-visual-multi
+let g:VM_maps = {}
+let g:VM_maps["Add Cursor Down"]             = '<leader><Down>'
+let g:VM_maps["Add Cursor Up"]               = '<leader><Up>'
