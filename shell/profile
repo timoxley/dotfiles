@@ -1,5 +1,7 @@
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/Users/timoxley/.cargo/bin
+
 # Customize to your needs...
 #::/usr/bin:/bin:/usr/sbin:/sbin
 #export PATH=$PATH:/usr/local/share/npm/bin
@@ -8,6 +10,7 @@ export PATH=$PATH:/usr/local/sbin
 
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
 export NODE_ENV='development'
+export ALGORAND_DATA="$HOME/algorand-node/data"
 
 hitch() {
   command hitch "$@"
