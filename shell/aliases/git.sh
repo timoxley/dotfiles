@@ -33,6 +33,28 @@ alias gpt='git push -u origin $(git_current_branch)'
 alias gws='git wip save WIP --untracked'
 alias gwd='git update-ref -d refs/wip/$(git_current_branch)'
 
+function gsh() {
+  if [ -n "$1" ]
+  then
+    local offset="$1"
+    shift
+  else
+    local offset="0"
+  fi
+  git show -p "stash@{$offset}" "$@"
+}
+
+function gshu() {
+  if [ -n "$1" ]
+  then
+    local offset="$1"
+    shift
+  else
+    local offset="0"
+  fi
+  git show -p "stash@{$offset}^3" "$@"
+}
+
 function gsk() {
   gitk --all --date-order $(git stash list | awk -F: '{print $1};')
 }
