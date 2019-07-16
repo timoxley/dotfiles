@@ -84,3 +84,5 @@ map \rwp <Plug>RestoreWinPosn
 " bind K to grep word under cursor
 nnoremap <silent>K :silent grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" break parameters onto new lines e.g. a,b,c onto individual lines
+map <leader>bp f}%cSBBj:s/,/,\r/g<CR>viB==
