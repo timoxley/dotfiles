@@ -18,7 +18,7 @@ fresh shell/bootstrap --file=~/.bashrc
 # zsh only config
 fresh shell/zshrc --file=~/.zshrc
 
-fresh shell/profile
+fresh shell/profile.sh
 fresh mafredri/z z.sh --ref=a2c8f28
 fresh shell/aliases/git.sh
 fresh shell/aliases/editor.sh
@@ -31,12 +31,12 @@ fresh-options --file=~/.vimrc.before --marker=\"
   fresh vim/vundle_before.vim
   fresh vim/plugins.vim
   fresh vim/config/bubbling.vim
-  fresh vim/plugins/ctrlp.vim
   fresh vim/plugins/incsearch-pulse.vim
   fresh vim/plugins/indent-guides.vim
   fresh vim/plugins/airline.vim
   fresh vim/plugins/startify.vim
   fresh vim/vundle_after.vim
+  fresh vim/plugins/ctrlp.vim
   fresh vim/janus.vim
 fresh-options
 

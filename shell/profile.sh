@@ -26,3 +26,8 @@ export LC_CTYPE=en_US.UTF-8
 
 # general shell settings
 export FIGNORE="CVS:.DS_Store:.svn:__Alfresco.url"
+
+export STREAMR_API_KEY="hI9RAYhdTCeexdEzRJki8gQNNwM4JuTDGIyBIizwoi-Q"
+
+alias sdd='streamr-docker-dev'
+[ -f /Users/timoxley/.sdkman/bin/sdkman-init.sh ] && source /Users/timoxley/.sdkman/bin/sdkman-init.sh

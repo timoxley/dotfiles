@@ -32,6 +32,8 @@ alias gp='git push'
 alias gpt='git push -u origin $(git_current_branch)'
 alias gws='git wip save WIP --untracked'
 alias gwd='git update-ref -d refs/wip/$(git_current_branch)'
+alias gsp='git stash push'
+alias gspop='git stash pop'
 
 function gsh() {
   if [ -n "$1" ]

@@ -1,12 +1,14 @@
 snippet inspect
 	function inspect(item) { // for debugging
-		console.log(require('util').inspect(item, {colors: true, depth: 30}))
+		var opts = {customInspect: false, showHidden: true, colors: true, depth: 4, maxArrayLength: 100}
+		console.log(require('util').inspect(item, opts))
 	}
 
 snippet inspec
 	function inspect(msg, ...args) { // for debugging
-		if (args.length) return console.log(msg, require('util').inspect(...args, {colors: true, depth: 30}))
-		else console.log(require('util').inspect(msg, {colors: true, depth: 30}))
+		var opts = {customInspect: false, showHidden: true, colors: true, depth: 4, maxArrayLength: 100}
+		if (args.length) return console.log(msg, require('util').inspect(...args, opts))
+		else console.log(require('util').inspect(msg, opts))
 	}
 
 	inspect(${0})
