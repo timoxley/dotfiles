@@ -312,7 +312,7 @@ grb() {
 stashgrep() {
   IFS=$'\n'
   for i in `git stash list --format="%gd"`; do
-    git stash show -p $i | grep -H --label="$i" "$1";
+    git stash show -p $i | grep -H --label="$i" --color=always -C1 $@;
   done
 }
 
