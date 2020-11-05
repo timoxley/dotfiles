@@ -64,3 +64,7 @@ alias synergy-stop="launchctl unload /Library/LaunchAgents/com.symless.synergy.s
 alias synergy-start="launchctl load /Library/LaunchAgents/com.symless.synergy.synergy-service.plist"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+# history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
