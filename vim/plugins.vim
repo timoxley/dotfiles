@@ -60,6 +60,11 @@ autocmd FileType javascript let g:ale_linters = {
 \  'javascriptreact': glob('.eslintrc*', '.;') != '' ? [ 'eslint', 'flow' ] : [ 'standard', 'flow' ],
 \}
 
+autocmd FileType javascript let g:ale_fixers = {
+\  'javascript': glob('.eslintrc*', '.;') != '' ? [ 'eslint' ] : [ 'standard' ],
+\  'javascriptreact': glob('.eslintrc*', '.;') != '' ? [ 'eslint' ] : [ 'standard' ],
+\}
+
 call ale#Set('javascript_standard_options', '--parser=babel-eslint')
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_sign_column_always = 1
