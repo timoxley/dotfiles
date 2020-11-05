@@ -1,4 +1,4 @@
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 Plugin 'ekalinin/Dockerfile.vim'
 "Plugin 'sheerun/vim-polyglot'
 Plugin 'pangloss/vim-javascript'
@@ -8,6 +8,7 @@ Plugin 'othree/html5.vim'
 "Plugin 'cespare/vim-toml'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'alunny/pegjs-vim'
+Plugin 'MaxMEllon/vim-jsx-pretty'
 "Plugin 'tikhomirov/vim-glsl'
 "Plugin 'mxw/vim-jsx'
 
@@ -21,8 +22,12 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'alexlafroscia/postcss-syntax.vim'
 Plugin 'mg979/vim-visual-multi'
 
+"Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-session'
+
+
 Plugin 'styled-components/vim-styled-components'
-"Plugin 'ryanoasis/vim-devicons'
+Plugin 'ryanoasis/vim-devicons'
 "Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " vim-javascript
@@ -68,19 +73,20 @@ autocmd FileType javascript let g:ale_fixers = {
 call ale#Set('javascript_standard_options', '--parser=babel-eslint')
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_sign_column_always = 1
+"let g:ale_change_sign_column_color = 1
 
 " NERD
 
 set lazyredraw " improve NERDTree render speed
-" let g:NERDSpaceDelims = 1
-" let g:NERDTrimTrailingWhitespace = 1
+ " let g:NERDSpaceDelims = 1
+ " let g:NERDTrimTrailingWhitespace = 1
 "
-" let g:webdevicons_gui_glyph_fix = 1
+ " let g:webdevicons_gui_glyph_fix = 1
  "let g:webdevicons_conceal_nerdtree_brackets = 1
-"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-"let g:WebDevIconsNerdTreeGitPluginForceVAlign = 0
-"let g:WebDevIconsUnicodeGlyphDoubleWidth = 0
-"let g:WebDevIconsOS = 'Darwin'
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+" let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+" let g:WebDevIconsOS = 'Darwin'
 
 " vim-devicons
 
@@ -107,3 +113,4 @@ let g:VM_maps["Add Cursor Up"]               = '<leader><Up>'
 
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
+

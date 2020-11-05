@@ -32,9 +32,10 @@ fresh-options --file=~/.vimrc.before --marker=\"
   fresh vim/plugins.vim
   fresh vim/config/bubbling.vim
   fresh vim/plugins/incsearch-pulse.vim
+
   fresh vim/plugins/indent-guides.vim
   fresh vim/plugins/airline.vim
-  fresh vim/plugins/startify.vim
+  #fresh vim/plugins/startify.vim
   fresh vim/vundle_after.vim
   fresh vim/plugins/ctrlp.vim
   fresh vim/janus.vim
