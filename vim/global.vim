@@ -14,11 +14,15 @@ set showcmd                                " Show incomplete cmds down the botto
 set showmode                               " Show current mode down the bottom
 set history=1000                           " Remember more history for commands and search patterns
 set ttyfast                                " More smooth screen redrawing
-set noesckeys                              " Disable extended key support (cursor keys, function keys). Improves <Esc> time dramatically.
+if !has('nvim')
+  set noesckeys                            " Disable extended key support (cursor keys, function keys). Improves <Esc> time dramatically.
+endif
 set ruler                                  " Show ruler
 set number                                 " Show line numbers
 set mouse=a                                " Enable the mouse
-set ttymouse=xterm                         " Enable mouse in tmux
+if !has('nvim')
+  set ttymouse=xterm2                      " Enable mouse in tmux
+endif
 set linespace=2                            " Spacing between lines
 set noswapfile                             " Disable creation of *.swp files
 set title                                  " Show title in terminal vim
