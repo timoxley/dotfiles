@@ -47,7 +47,7 @@ source /Users/timoxley/.iterm2_shell_integration.zsh
 # make zsh keybindings like bash
 bindkey '^U' backward-kill-line
 bindkey '^Y' yank
-
+bindkey "^w" backward-kill-word
 
 unalias run-help
 autoload run-help
