@@ -11,6 +11,9 @@ Plugin 'alunny/pegjs-vim'
 Plugin 'MaxMEllon/vim-jsx-pretty'
 "Plugin 'tikhomirov/vim-glsl'
 "Plugin 'mxw/vim-jsx'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
 
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-smooth-scroll'
@@ -21,10 +24,11 @@ Plugin 'mhinz/vim-startify'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'alexlafroscia/postcss-syntax.vim'
 Plugin 'mg979/vim-visual-multi'
+Plugin 'heavenshell/vim-jsdoc'
+
 
 "Plugin 'xolox/vim-misc'
 "Plugin 'xolox/vim-session'
-
 
 Plugin 'styled-components/vim-styled-components'
 Plugin 'ryanoasis/vim-devicons'
@@ -114,3 +118,4 @@ let g:VM_maps["Add Cursor Up"]               = '<leader><Up>'
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
+let g:deoplete#enable_at_startup = 1
