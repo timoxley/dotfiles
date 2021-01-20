@@ -74,3 +74,4 @@ bindkey '^[[B' history-substring-search-down
 autoload -Uz select-word-style
 select-word-style shell
 
+source ~/.fzf.zsh
