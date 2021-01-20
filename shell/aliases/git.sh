@@ -35,6 +35,7 @@ alias gws='git wip save WIP --untracked'
 alias gwd='git update-ref -d refs/wip/$(git_current_branch)'
 alias gsp='git stash push'
 alias gspop='git stash pop'
+alias gu='gitui'
 
 function gsh() {
   if [ -n "$1" ]
