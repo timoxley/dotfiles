@@ -70,3 +70,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+autoload -Uz select-word-style
+select-word-style shell
+
